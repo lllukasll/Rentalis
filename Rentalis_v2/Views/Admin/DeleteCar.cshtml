@@ -1,0 +1,33 @@
+﻿@model Rentalis_v2.Models.CarModels
+@{
+    ViewBag.Title = "DeleteCar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Czy napewno chcesz usunąć ten samochód z bazy danych ? </h2>
+
+@using (Html.BeginForm("DeleteCarFromDb", "Admin"))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.DisplayFor(model => model.Name, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductionYear)
+        @Html.DisplayFor(model => model.ProductionYear, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description)
+        @Html.DisplayFor(model => model.Description, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Usuń" class="btn btn-danger" />
+            @Html.ActionLink("Wróć do listy samochodów", "Cars", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+}
+
+
+

@@ -1,0 +1,41 @@
+﻿@model Rentalis_v2.Models.CarModels
+@{
+    ViewBag.Title = "CarDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CarDetails</h2>
+
+<dl class="dl-horizontal">
+
+    <dt>
+        Nazwa
+    </dt>
+
+    <dd>
+        <b>@Html.DisplayFor(model => model.Name)</b>
+    </dd>
+    <dt>
+        Opis
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Description)
+        @*@Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.Content))*@
+    </dd>
+
+    <dt>
+        Rok produkcji
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ProductionYear)
+    </dd>
+    
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-11">
+            @*@Html.ActionLink("Edytuj", "EditCar", new { id = Model.Id }, new { @class = "btn btn-success" })*@
+            @Html.ActionLink("Wróć do listy ogłoszeń", "Cars", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</dl>

@@ -1,0 +1,78 @@
+﻿@model Rentalis_v2.Models.CarModels
+@{ 
+    var imagePath= "";
+    if( Request["photoChoice"] != null){
+        imagePath = @"/Scripts/fileman/Uploads/Images/" + Request["photoChoice"];
+    }
+
+    ViewBag.Title = "AddCar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+<h2> Dodaj samochód : </h2>
+@using (Html.BeginForm("SaveCar", "Admin"))
+{
+    <div class="form-group">
+        <label>Dodaj zjdęcie : </label>
+        <a href="../Scripts/fileman/index.html" target="_new" class="btn btn-info">Upload</a>
+    </div>
+
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="MainScriptManager" runat="server" />
+        <asp:UpdatePanel ID="pnlHelloWorld" runat="server">
+            <ContentTemplate>
+                <asp:Label runat="server" ID="lblHelloWorld" Text="Click the button!" />
+                <br /><br />
+                <asp:Button runat="server" ID="btnHelloWorld" OnClick="btnHelloWorld_Click" Text="Update label!" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </form>
+
+    <form method="post" action="">
+        <div>
+            I want to see:
+            <textarea name="photoChoice"></textarea>
+            &nbsp;
+            <input type="submit" value="Submit" />
+        </div>
+        <div style="padding:10px;">
+            @if (imagePath != "")
+            {
+                <img src="@imagePath" alt="Sample Image" width="300px" />
+            }
+        </div>
+    </form>
+    
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductionYear)
+        @Html.TextBoxFor(model => model.ProductionYear, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ProductionYear)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description)
+        @Html.TextAreaFor(model => model.Description, new { @id = "FullDescription", @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Description)
+        <script>
+            var roxyFileman = '../Scripts/fileman/index.html';
+            CKEDITOR.replace('FullDescription', {
+                filebrowserBrowseUrl: roxyFileman,
+                filebrowserImageBrowseUrl: roxyFileman + '?type=image',
+                removeDialogTabs: 'link:upload;image:upload'
+            });
+        </script>
+    </div>
+    @Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Dodaj" class="btn btn-success" />
+            @Html.ActionLink("Wróć do listy samochodów", "Cars", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+}

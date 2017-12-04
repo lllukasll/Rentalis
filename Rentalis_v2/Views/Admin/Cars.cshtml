@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Rentalis_v2.Models.CarModels>
+@{
+    ViewBag.Title = "CarsList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cars</h2>
+
+@Html.ActionLink("Utwórz nowe", "AddCar", "Announcements", new { @class = "btn btn-default" })
+
+<table id="tableAnnounce" class="table table-advance table-hover">
+    <tbody>
+    <tr>
+        <th> Nazwa</th>
+        <th> Rok produkcji</th>
+        <th>Opis</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductionYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td class="btn-group">
+                @Html.ActionLink("Edytuj", "EditCar", new { id = item.Id }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Szczegóły", "CarDetails", new { id = item.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Usuń", "DeleteCar", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+        @Html.HiddenFor(id => item.Id)
+    }
+    </tbody>
+</table>
