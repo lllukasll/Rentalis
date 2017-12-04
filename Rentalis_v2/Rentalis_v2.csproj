@@ -215,6 +215,46 @@
     <Compile Include="Migrations\201712021739598_UpdatedDataAnotations.Designer.cs">
       <DependentUpon>201712021739598_UpdatedDataAnotations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712041733390_AddedPicture.cs" />
+    <Compile Include="Migrations\201712041733390_AddedPicture.Designer.cs">
+      <DependentUpon>201712041733390_AddedPicture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041737501_AllowedHtmlInDescriptionField.cs" />
+    <Compile Include="Migrations\201712041737501_AllowedHtmlInDescriptionField.Designer.cs">
+      <DependentUpon>201712041737501_AllowedHtmlInDescriptionField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041750022_test.cs" />
+    <Compile Include="Migrations\201712041750022_test.Designer.cs">
+      <DependentUpon>201712041750022_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041757252_ChangedIdToNotRequired.cs" />
+    <Compile Include="Migrations\201712041757252_ChangedIdToNotRequired.Designer.cs">
+      <DependentUpon>201712041757252_ChangedIdToNotRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041816042_PicturesAndRequiredDescription.cs" />
+    <Compile Include="Migrations\201712041816042_PicturesAndRequiredDescription.Designer.cs">
+      <DependentUpon>201712041816042_PicturesAndRequiredDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041828000_AddedShortDescription.cs" />
+    <Compile Include="Migrations\201712041828000_AddedShortDescription.Designer.cs">
+      <DependentUpon>201712041828000_AddedShortDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041840176_AddedInformationsForCars.cs" />
+    <Compile Include="Migrations\201712041840176_AddedInformationsForCars.Designer.cs">
+      <DependentUpon>201712041840176_AddedInformationsForCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041845347_DeletedSomeInforamtionsFromCar.cs" />
+    <Compile Include="Migrations\201712041845347_DeletedSomeInforamtionsFromCar.Designer.cs">
+      <DependentUpon>201712041845347_DeletedSomeInforamtionsFromCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041857094_AddedDoorsNumber.cs" />
+    <Compile Include="Migrations\201712041857094_AddedDoorsNumber.Designer.cs">
+      <DependentUpon>201712041857094_AddedDoorsNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712041904519_AddedInformations.cs" />
+    <Compile Include="Migrations\201712041904519_AddedInformations.Designer.cs">
+      <DependentUpon>201712041904519_AddedInformations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CarModels.cs" />
@@ -1027,6 +1067,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712021739598_UpdatedDataAnotations.resx">
       <DependentUpon>201712021739598_UpdatedDataAnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041733390_AddedPicture.resx">
+      <DependentUpon>201712041733390_AddedPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041737501_AllowedHtmlInDescriptionField.resx">
+      <DependentUpon>201712041737501_AllowedHtmlInDescriptionField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041750022_test.resx">
+      <DependentUpon>201712041750022_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041757252_ChangedIdToNotRequired.resx">
+      <DependentUpon>201712041757252_ChangedIdToNotRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041816042_PicturesAndRequiredDescription.resx">
+      <DependentUpon>201712041816042_PicturesAndRequiredDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041828000_AddedShortDescription.resx">
+      <DependentUpon>201712041828000_AddedShortDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041840176_AddedInformationsForCars.resx">
+      <DependentUpon>201712041840176_AddedInformationsForCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041845347_DeletedSomeInforamtionsFromCar.resx">
+      <DependentUpon>201712041845347_DeletedSomeInforamtionsFromCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041857094_AddedDoorsNumber.resx">
+      <DependentUpon>201712041857094_AddedDoorsNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041904519_AddedInformations.resx">
+      <DependentUpon>201712041904519_AddedInformations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

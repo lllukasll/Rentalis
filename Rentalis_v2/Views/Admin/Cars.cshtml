@@ -11,6 +11,7 @@
 <table id="tableAnnounce" class="table table-advance table-hover">
     <tbody>
     <tr>
+        <th>Zdjęcie</th>
         <th> Nazwa</th>
         <th> Rok produkcji</th>
         <th>Opis</th>
@@ -20,18 +21,21 @@
     {
         <tr>
             <td>
+                <img src="/Admin/RetrieveImage/@item.Id" alt="" height=100 width=200 />
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductionYear)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.ShortDescription)
             </td>
             <td class="btn-group">
-                @Html.ActionLink("Edytuj", "EditCar", new { id = item.Id }, new { @class = "btn btn-success" })
-                @Html.ActionLink("Szczegóły", "CarDetails", new { id = item.Id }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Usuń", "DeleteCar", new { id = item.Id }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Edytuj", "EditCar", new {id = item.Id}, new {@class = "btn btn-success"})
+                @Html.ActionLink("Szczegóły", "CarDetails", new {id = item.Id}, new {@class = "btn btn-primary"})
+                @Html.ActionLink("Usuń", "DeleteCar", new {id = item.Id}, new {@class = "btn btn-danger"})
             </td>
         </tr>
         @Html.HiddenFor(id => item.Id)

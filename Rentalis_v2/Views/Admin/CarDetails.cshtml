@@ -7,6 +7,14 @@
 <h2>CarDetails</h2>
 
 <dl class="dl-horizontal">
+    
+    <dt>
+        Zdjęcie
+    </dt>
+
+    <dd>
+        <img src="/Admin/RetrieveImage/@Model.Id" alt="" height=100 width=200 />
+    </dd>
 
     <dt>
         Nazwa
@@ -15,15 +23,7 @@
     <dd>
         <b>@Html.DisplayFor(model => model.Name)</b>
     </dd>
-    <dt>
-        Opis
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Description)
-        @*@Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.Content))*@
-    </dd>
-
+    
     <dt>
         Rok produkcji
     </dt>
@@ -31,7 +31,90 @@
     <dd>
         @Html.DisplayFor(model => model.ProductionYear)
     </dd>
+
+    <dt>
+        Opis
+    </dt>
+
+    <dd>
+        @Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.Description))
+    </dd>
     
+    <dt>Abs</dt>
+    <dd>@Html.DisplayFor(model => model.Abs)</dd>
+
+    <dt>PowerSteering</dt>
+    <dd>@Html.DisplayFor(model => model.PowerSteering)</dd>
+
+    <dt>AirConditioning</dt>
+    <dd>@Html.DisplayFor(model => model.AirConditioning)</dd>
+
+    <dt>CentralLocking</dt>
+    <dd>@Html.DisplayFor(model => model.CentralLocking)</dd>
+
+    <dt>AirBags</dt>
+    <dd>@Html.DisplayFor(model => model.AirBags)</dd>
+    
+    <dt>Doors</dt>
+    <dd>@Html.DisplayFor(model => model.Doors)</dd>
+    <dt>Seets</dt>
+    <dd>@Html.DisplayFor(model => model.Seets)</dd>
+    <dt>FuelType</dt>
+    <dd>
+        @if (Model.FuelType == 0)
+        {
+            <p>Benzyna</p>
+        }
+        else if (Model.FuelType == 1)
+        {
+            <p>Diesel</p>
+        }
+        else if (Model.FuelType == 2)
+        {
+            <p>Benzyna + LPG </p>
+        }
+    </dd>
+    <dt>Type</dt>
+    <dd>@if (Model.Type == 0)
+        {
+            <p>Sedan</p>
+        }
+        else if (Model.Type == 1)
+        {
+            <p>Hatch-back</p>
+        }
+        else if (Model.Type == 2)
+        {
+            <p>Kombi </p>
+        }
+        else if (Model.Type == 3)
+        {
+            <p>Pick-up </p>
+        }
+        else if (Model.Type == 4)
+        {
+            <p>Kabriolet </p>
+        }
+        else if (Model.Type == 5)
+        {
+            <p>Minivan </p>
+        }
+        else if (Model.Type == 6)
+        {
+            <p>Limuzyna </p>
+        }
+    </dd>
+    <dt>GearBox</dt>
+    <dd>@if (Model.GearBox == 0)
+        {
+            <p>Manualna</p>
+        }
+        else if (Model.GearBox == 1)
+        {
+            <p>Automatyczna</p>
+        }</dd>
+
+
     <div class="form-group">
         <div class="col-md-offset-1 col-md-11">
             @*@Html.ActionLink("Edytuj", "EditCar", new { id = Model.Id }, new { @class = "btn btn-success" })*@

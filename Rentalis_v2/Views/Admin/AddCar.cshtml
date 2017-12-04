@@ -1,49 +1,14 @@
 ﻿@model Rentalis_v2.Models.CarModels
 @{ 
-    var imagePath= "";
-    if( Request["photoChoice"] != null){
-        imagePath = @"/Scripts/fileman/Uploads/Images/" + Request["photoChoice"];
-    }
-
     ViewBag.Title = "AddCar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script src="~/Scripts/ckeditor/ckeditor.js"></script>
 
 <h2> Dodaj samochód : </h2>
-@using (Html.BeginForm("SaveCar", "Admin"))
+@using (Html.BeginForm("SaveCar", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <div class="form-group">
-        <label>Dodaj zjdęcie : </label>
-        <a href="../Scripts/fileman/index.html" target="_new" class="btn btn-info">Upload</a>
-    </div>
-
-    <form id="form1" runat="server">
-        <asp:ScriptManager ID="MainScriptManager" runat="server" />
-        <asp:UpdatePanel ID="pnlHelloWorld" runat="server">
-            <ContentTemplate>
-                <asp:Label runat="server" ID="lblHelloWorld" Text="Click the button!" />
-                <br /><br />
-                <asp:Button runat="server" ID="btnHelloWorld" OnClick="btnHelloWorld_Click" Text="Update label!" />
-            </ContentTemplate>
-        </asp:UpdatePanel>
-    </form>
-
-    <form method="post" action="">
-        <div>
-            I want to see:
-            <textarea name="photoChoice"></textarea>
-            &nbsp;
-            <input type="submit" value="Submit" />
-        </div>
-        <div style="padding:10px;">
-            @if (imagePath != "")
-            {
-                <img src="@imagePath" alt="Sample Image" width="300px" />
-            }
-        </div>
-    </form>
-    
+    <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
 
     <div class="form-group">
         @Html.LabelFor(model => model.Name)
@@ -54,6 +19,11 @@
         @Html.LabelFor(model => model.ProductionYear)
         @Html.TextBoxFor(model => model.ProductionYear, new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.ProductionYear)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ShortDescription)
+        @Html.TextAreaFor(model => model.ShortDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ShortDescription)
     </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Description)
@@ -68,6 +38,95 @@
             });
         </script>
     </div>
+
+    <div class="form-group">
+        
+        @Html.CheckBoxFor(model => model.Abs, new { @class = "form-check-input" })
+        @Html.LabelFor(model => model.Abs)
+        @Html.ValidationMessageFor(model => model.Abs)
+    </div>
+    <div class="form-group">
+        
+        @Html.CheckBoxFor(model => model.PowerSteering, new { @class = "form-check-input" })
+        @Html.LabelFor(model => model.PowerSteering)
+        @Html.ValidationMessageFor(model => model.PowerSteering)
+    </div>
+    <div class="form-group">
+        
+        @Html.CheckBoxFor(model => model.AirConditioning, new { @class = "form-check-input" })
+        @Html.LabelFor(model => model.AirConditioning)
+        @Html.ValidationMessageFor(model => model.AirConditioning)
+    </div>
+    <div class="form-group">
+        
+        @Html.CheckBoxFor(model => model.CentralLocking, new { @class = "form-check-input" })
+        @Html.LabelFor(model => model.CentralLocking)
+        @Html.ValidationMessageFor(model => model.CentralLocking)
+    </div>
+    <div class="form-group">
+       
+        @Html.CheckBoxFor(model => model.AirBags, new { @class = "form-check-input" })
+        @Html.LabelFor(model => model.AirBags)
+        @Html.ValidationMessageFor(model => model.AirBags)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Doors)
+        @Html.DropDownListFor(model => model.Doors,new SelectList(new List<Object>
+        {
+            new {value = 0, text = "3"},
+            new {value = 1, text = "5"},
+        }, "value", "text"))
+        @Html.ValidationMessageFor(model => model.Doors)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Seets)
+        @Html.DropDownListFor(model => model.Seets, new SelectList(new List<Object>
+        {
+            new {value = 0, text = "2"},
+            new {value = 1, text = "5"},
+            new {value = 2, text = "7"},
+        }, "value", "text"))
+        @Html.ValidationMessageFor(model => model.Seets)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FuelType)
+        @Html.DropDownListFor(model => model.FuelType, new SelectList(new List<Object>
+        {
+            new {value = 0, text = "Benzyna"},
+            new {value = 1, text = "Diesel"},
+            new {value = 2, text = "Benzyna+LPG"},
+        }, "value", "text"))
+        @Html.ValidationMessageFor(model => model.FuelType)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Type)
+        @Html.DropDownListFor(model => model.Type, new SelectList(new List<Object>
+        {
+            new {value = 0, text = "Sedan"},
+            new {value = 1, text = "Hatch-back"},
+            new {value = 2, text = "Kombi"},
+            new {value = 3, text = "Pick-up"},
+            new {value = 4, text = "Kabriolet"},
+            new {value = 5, text = "Minivan"},
+            new {value = 6, text = "Limuzyna"},
+        }, "value", "text"))
+        @Html.ValidationMessageFor(model => model.Type)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.GearBox)
+        @Html.DropDownListFor(model => model.GearBox, new SelectList(new List<Object>
+        {
+            new {value = 0, text = "Manualna"},
+            new {value = 1, text = "Automatyczna"},
+        }, "value", "text"))
+        @Html.ValidationMessageFor(model => model.GearBox)
+    </div>
+
     @Html.HiddenFor(model => model.Id)
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
