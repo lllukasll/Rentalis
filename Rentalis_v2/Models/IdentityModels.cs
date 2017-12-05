@@ -23,6 +23,7 @@ namespace Rentalis_v2.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<CarModels> carModels { get; set; }
+        public DbSet <BookingModels> bookingModels { get; set; }
 
         public ApplicationDbContext()
             : base("MyContext", throwIfV1Schema: false)
