@@ -1,6 +1,9 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 60px;
     padding-bottom: 20px;
+    /*  background-color: #0d47a1;*/
+    min-height: 1700px;
+    font-family: 'Lato', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -29,4 +32,56 @@ textarea {
 
 .input-validation-error {
     border: 2px solid red;
+}
+/* Nav*/
+
+.navbar-inverse {
+    background-color: #5472d3;
+    border-bottom-color: #5472d3;
+    font-size: 18px;
+    padding: 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.navbar img {
+  padding-right:40px;
+  
+}
+.navbar-inverse .navbar-nav > li > a {
+ 
+    color: white;
+    border-bottom: 1px solid transparent;
+    padding: 0; /*removing spacing*/
+    margin: 14px; /*add spacing*/
+}
+.navbar-inverse .navbar-nav > li > a:hover > span {
+    
+    transition: border 1s linear;
+   
+}
+/*animacja navbar*/
+.cbp-af-header-shrink {
+    padding:4px;
+    color:red;
+}
+
+/* btn*/
+.btn-primary {
+    color: #fff;
+    background-color: #c62828;
+    border-color: #ff5f52; /*set the color you want here*/
+}
+    .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+        color: #fff;
+        background-color: #ff5f52;
+        border-color: #ff5f52; /*set the color you want here*/
+    }
+.cbp-af-header h1,
+.cbp-af-header nav li {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.5s;
 }
