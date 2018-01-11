@@ -22,12 +22,20 @@ namespace Rentalis_v2
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/bootstrap-datepicker.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/classie.js",
+                      "~/Scripts/cbpAnimatedHeader.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-datepicker.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/adminpanel.css"));
+            bundles.Add(new StyleBundle("~/Content/admin-css/css").Include(
+                    "~/Content/bootstrap.css",
+                    "~/Content/bootstrap-datepicker.css",
+                    "~/Content/admin-css/adminpanel.css"));
         }
     }
 }

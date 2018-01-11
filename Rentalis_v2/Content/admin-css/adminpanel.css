@@ -1,0 +1,38 @@
+﻿body, html {
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+}
+#sideMenu {
+    background-color: #ff5f52;
+    padding:0;
+}
+#sideMenu h1 {
+    color: #c62828;
+    text-align:center;
+    margin:20px 0px;
+    font-size:24px;
+}
+.box {
+    min-height:1200px;
+}
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.display-table {
+    display: table;
+    height: 100%;
+    padding:0px;
+}
+.display-table-row {
+    display: table-row;
+    height: 100%;
+}
+.display-table-cell {
+    display: table-cell;
+    float:none;
+    height:100%;
+}
+.valign-top{
+    vertical-align:top;
+}
