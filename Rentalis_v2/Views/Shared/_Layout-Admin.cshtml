@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Panel Administracyjny</title>
+    @Styles.Render("~/Content/admin-css/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<body>
+
+    
+
+    <div class="container-fluid body-content display-table">
+
+        <div class="row display-table-row">
+
+            <div class="col-md-2 display-table-cell valign-top" id="sideMenu">
+                <h1>Navigation</h1>
+            </div>
+            <div class="col-md-10 display-table-cell valign-top" >
+                @RenderBody()
+            </div>
+        </div>
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
